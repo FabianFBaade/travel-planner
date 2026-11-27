@@ -1,0 +1,524 @@
+:root {
+    --color-background: #FAF8F4;
+    --color-heading: #123F46;
+    --color-muted-teal: #B9CFD1;
+    --color-deep-dark-teal: #092B31;
+    --color-muted: #63787B;
+    --color-white: #FFFFFF;
+    --color-accent: #092B31;
+    --color-accent2: #D2602D;
+    --color-accent-dark: #A84420;
+    --color-explain-background: #E5ECE8;
+    --shadow: 5px 10px 28px rgba(16, 52, 58, 0.28);
+    --shadow-under: 0 10px 15px -8px rgba(16, 52, 58, 0.28);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    margin: 0;
+
+    background-color: var(--color-background);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+label {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    transition: filter 0.15s;
+}
+
+/* header */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    height: 9vh;
+    width: 100%;
+
+    background-color: var(--color-white);
+    box-shadow: 5px 5px 20px rgba(16, 52, 58, 0.14);
+
+    font-weight: bold;
+    color: var(--color-heading);
+}
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 0 5.6rem;
+}
+
+main {
+    width: 100%;
+}
+
+.logo {
+    font-size: 2.8rem;
+}
+
+.tagline {
+    color: var(--color-muted);
+    margin: 1.2rem 0 0 2.5rem;
+    font-size: 0.8rem;
+}
+
+#discover-head-link {
+    margin-left: auto;
+
+    padding: 0.9rem 2rem;
+
+    border-radius: 1.5rem;
+    background-color: var(--color-accent);
+    transition: filter 0.15s;
+    box-shadow: var(--shadow);
+
+    color: var(--color-white);
+}
+#discover-head-link:hover {
+    filter: brightness(90%);
+}
+
+/* hero */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+
+    height: 65vh;
+    width: 90%;
+
+    margin: 3rem auto 0;
+    padding: 0 0 0 2.5rem;
+
+    background: linear-gradient(
+        to right,
+        rgba(9, 43, 49, 0.40),
+        rgba(255, 221, 169, 0.05)
+    ), url(/assets/images/japan-pagoda-city-panorama.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 90%;
+    background-attachment: fixed;
+    border-radius: 1.4rem;
+
+    color: var(--color-white);
+}
+.hero h1 {
+    margin: 3rem 0 1.25rem;
+
+    color: var(--color-background);
+
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: -0.1rem;
+    font-family: "Playfair Display", serif;
+}
+.hero p {
+    margin: 0 0 0.75rem;
+
+    color: var(--color-background);
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.hero a {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 2rem;
+    margin-right: auto;
+
+    padding: 0.9rem 2rem;
+
+    border-radius: 0.8rem;
+    background-color: var(--color-accent2);
+    transition: filter 0.15s;
+
+    font-weight: bold;
+}
+.hero a:hover {
+    filter: brightness(90%);
+}
+.hero img {
+    position: relative;
+
+    bottom: 7rem;
+
+    height: 45vh;
+    width: 45vh;
+}
+
+/* travel filters */
+
+.travel-filters-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    height: 12vh;
+    width: 72%;
+
+    gap: 0.8rem;
+    margin: -4rem auto 0;
+    padding: 0 2rem;
+
+    background-color: var(--color-white);
+    box-shadow: var(--shadow);
+    border-radius: 1.4rem;
+}
+.travel-filters-1 > div {
+    display: flex;
+    flex: 1;
+}
+
+#when-button,
+#continent-button,
+#budget-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+    z-index: 1;
+
+    padding: 0.9rem 2rem;
+    gap: 0.8rem;
+
+    background-color: white;
+    border-left: solid 1px black;
+    transition: filter 0.15s;
+
+    color: var(--color-muted);
+}
+#when-button img,
+#continent-button img,
+#budget-button img {
+    margin-bottom: 0.1rem;
+}
+#when-button {
+    border: none;
+}
+#budget-button {
+    border-right: solid 1px black;
+}
+#when-choice,
+#continent-choice,
+#budget-choice {
+    color: var(--color-heading);
+    white-space: nowrap;
+}
+
+.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    flex-direction: column;
+    z-index: 1;
+
+    top: calc(100% + 0.6rem);
+    left: 0;
+    width: 100%;
+
+    gap: 0.2rem;
+    padding: 1.2rem;
+
+    background-color: var(--color-white);
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+}
+.dropdown-menu button {
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.3rem;
+    color: black;
+
+    transition: background-color 0.15s;
+}
+
+#search-filter-button {
+    margin: 0 1rem 0 2rem;
+
+    padding: 0.9rem 1.6rem;
+
+    border-radius: 0.8rem;
+    background-color: var(--color-heading);
+    transition: filter 0.15s;
+
+    color: var(--color-white);
+    font-weight: bold;
+}
+#search-filter-button:hover {
+    filter: brightness(90%);
+}
+#when-dropdown {
+    display: none;
+}
+#continent-dropdown {
+    display: none;
+}
+#budget-dropdown {
+    display: none;
+}
+
+/* recomendations */
+
+.recommendation-page {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+
+    margin-top: 2rem;
+
+    width: 88%;
+
+    background-color: var(--color-background);
+}
+.recommendation-header :is(h6, h2) {
+    font-weight: bold;
+}
+.recommendation-header h6 {
+    color: var(--color-accent2);
+    font-size: 0.8rem;
+}
+.recommendation-header h2 {
+    color: var(--color-deep-dark-teal);
+    font-size: 2.8rem;
+    font-family: "Playfair Display", serif;
+}
+.recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+}
+#recommendation-card-1,
+#recommendation-card-2,
+#recommendation-card-3 {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    gap: 1rem;
+
+    cursor: pointer;
+}
+.img-zoom {
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+}
+.recommendation-img-1,
+.recommendation-img-2,
+.recommendation-img-3 {
+    width: 100%;
+    height: 18rem;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 1rem;
+}
+.recommendation-img-1 {
+    background-image: url(/assets/images/kyoto-ninenzaka-domenico-convertini.jpg);
+}
+
+.recommendation-img-2 {
+    background-image: url(/assets/images/krabi-thailand.jpeg);
+}
+
+.recommendation-img-3 {
+    background-image: url(/assets/images/singapore.jpeg);
+}
+.recommendation-description :is(h3, ul) {
+    margin: 0;
+    padding: 0.2rem 0 0.8rem 0.7rem;
+
+    list-style: none;
+}
+.recommendation-description h3 {
+    color: var(--color-heading);
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-family: "Playfair Display", serif;
+}
+.recommendation-description li {
+    padding-top: 0.6rem;
+    color: var(--color-muted);
+}
+
+/* explination page */
+
+.explination-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 3rem;
+
+    background-color: var(--color-explain-background);
+}
+.explination-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.explination-head :is(h4, h2, h5) {
+    margin: 0.8rem;
+}
+.explination-head h4 {
+    color: var(--color-accent2);
+    font-size: 0.9rem;
+}
+.explination-head h2 {
+    color: var(--color-accent);
+    font-size: 1.6rem;
+}
+.explination-head h5 {
+    color: var(--color-muted);
+}
+
+.explination-steps {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    
+    width: 70%;
+
+    margin: 0 auto 3rem;
+    gap: 2rem;
+}
+.explination-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 4rem;
+    width: 4rem;
+    margin: 1.5rem auto -0.5rem;
+
+    padding: 0;
+
+    background-color: var(--color-white);
+    border-radius: 50%;
+}
+.explination-icon img {
+    height: 3.5vh;
+}
+.explination-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 1rem;
+    gap: 1.8rem;
+}
+.explination-description :is(h4, p) {
+    margin: 0;
+}
+
+/* end section */
+
+.end-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--color-accent);
+}
+.end-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+}
+.end-description h5 {
+    margin: 0.5rem 0;
+
+    padding-top: 2rem;
+
+    color: var(--color-accent2);
+    font-size: 0.9rem;
+}
+.end-description h2 {
+    margin: 0.5rem 0;
+
+    color: var(--color-white);
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+}
+.end-description p {
+    color: var(--color-muted-teal);
+    font-size: 0.8rem;
+    padding-bottom: 3rem;
+}
+
+.end-place-button {
+    padding-bottom: 3rem;
+}
+.end-button {
+    padding: 0.9rem 1.6rem;
+
+    background-color: var(--color-accent2);
+    border-radius: 0.8rem;
+
+    color: var(--color-white);
+}
+
+/* footer */
+
+footer {
+    margin-top: 3rem;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 2rem 1.25rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+.site-footer a:hover {
+    color: var(--color-heading);
+}

@@ -1,74 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
 
-        <link rel="stylesheet" href="/css/index.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/main.css">
         <title>Travel Finder</title>
         <script src="/js/main.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     </head>
     <body>
 
-        <header class="head1">
+        <header>
 
-            <h2>TRAVEl..</h2>
-            <h3 class="small-text-hollow">Find Your Place</h3>
-            <h2 id="place-button-head">Discover My Place</h2>
+            <nav>
+                <a class="logo" href="#">TRAVEl..</a>
+                <p class="tagline">Find Your Place</p>
+                <a id="discover-head-link" href="#">Discover My Place</a>
+            </nav>
 
         </header>
 
-        <div class="mian-page">
 
-            <h1 class="main-text">Your Next Holiday</h1>
-            <h4 class="non-main-text">Not sure where to go?<br>
-                Find a place that feels like you</h4>
-            <h5 id="discover-button">Discover Your Place</h5>
-            <img class="japan-location-map" src="/assets/img/japan-yamanashi-white.png" alt="Map of japan">
+        <main>
 
-        </div>
+            <section class="hero">
 
-        <div id="question-box-1">
+                <h1>Your Next Holiday</h1>
 
-            <div class="question-box-1-1">
+                <p>Not sure where to go?<br>
+                    Find a place that feels like you</p>
 
-                <h5 class="small-text-question-1">WHEN</h5>
-                <details>
+                <a href="#">Discover Your Place</a>
 
-                    <summary style="cursor: pointer;">Empty</summary>
+                <img
+                    src="/assets/images/japan-yamanashi-white.png"
+                    alt="Map of japan"
+                >
+            </section>
 
-                    <li>Always</li>
+            <div class="travel-filters-1">
 
-                </details>
+                <div class="dropdown">
+                    <button type="button" id="when-button">
+                        <img src="/assets/Icons/calendar.svg" alt="calendar">
+                        When:
+                        <span id="when-choice"></span>
+                    </button>
+
+                    <div class="dropdown-menu" id="when-dropdown">
+                        <button type="button">Spring</button>
+                        <button type="button">Summer</button>
+                        <button type="button">Autumn</button>
+                        <button type="button">Winter</button>
+
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" id="continent-button">
+                        <img src="/assets/Icons/map.svg" alt="map">
+                        Continent:
+                        <span id="continent-choice"></span>
+                    </button>
+
+                    <div class="dropdown-menu" id="continent-dropdown">
+                        <button type="button">Anywhere</button>
+                        <button type="button">Europe</button>
+                        <button type="button">Asia</button>
+                        <button type="button">Africa</button>
+                        <button type="button">North America</button>
+                        <button type="button">South America</button>
+                        <button type="button">Oceania</button>
+
+                    </div>
+
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" id="budget-button">
+                        <img src="/assets/Icons/wallet.svg" alt="wallet">
+                        Budget:
+                        <span id="budget-choice"></span>
+                    </button>
+
+                    <div class="dropdown-menu" id="budget-dropdown">
+                        <button type="button">Any budget</button>
+                        <button type="button">Under 5,000 NOK</button>
+                        <button type="button">5,000 - 10,000 NOK</button>
+                        <button type="button">10,000 - 20,000 NOK</button>
+                        <button type="button">20,000 - 30,000 NOK</button>
+                        <button type="button">30,000+ NOK</button>
+
+                    </div>
+
+                </div>
+
+                <button id="search-filter-button" type="button">
+                    Search Your Destination
+                </button>
 
             </div>
 
-            <div class="question-box-1-2">
+            <section class="recommendation-page">
 
-                <h5 class="small-text-question-1">CONTINENT</h5>
-                <details>
+                <div class="recommendation-header">
 
-                    <summary style="cursor: pointer;">Empty</summary>
+                    <h6>The World Is Calling You</h6>
+                    <h2>Some Places To Fall For</h2>
 
-                    <li>Asia</li>
+                </div>
 
-                </details>
 
-            </div>
+                <div class="recommendation-cards">
 
-            <div class="question-box-1-3">
+                    <div id="recommendation-card-1">
 
-                <h5 class="small-text-question-1">BUDGET</h5>
-                <details>
+                        <div class="img-zoom">
+                        <div class="recommendation-img-1"></div>
+                        </div>
 
-                    <summary style="cursor: pointer;">Empty</summary>
+                        <div class="recommendation-description">
 
-                    <li>Unlimited</li>
+                            <h3>Kyoto, Japan</h3>
+                            <ul>
+                                <li>Best season: Spring & Autumn</li>
+                                <li>Known for: Temples & Japanese culture</li>
+                                <li>Ideal for: History & sightseeing</li>
+                            </ul>
 
-                </details>
+                        </div>
 
-            </div>
+                    </div>
 
-        </div>
-        
+                    <div id="recommendation-card-2">
+
+                        <div class="img-zoom">
+                        <div class="recommendation-img-2"></div>
+                        </div>
+
+                        <div class="recommendation-description">
+                            
+                            <h3>Krabi, Thailand</h3>
+                            <ul>
+                                <li>Best season: Winter</li>
+                                <li>Known for: Beaches & Tropical islands</li>
+                                <li>Ideal for: Relaxation & Nature</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div id="recommendation-card-3">
+
+                        <div class="img-zoom">
+                        <div class="recommendation-img-3"></div>
+                        </div>
+
+                        <div class="recommendation-description">
+                            
+                            <h3>Singapore</h3>
+                            <ul>
+                                <li>Best season: Winter & Spring</li>
+                                <li>Known for: Architecture & Gardens</li>
+                                <li>Ideal for: Food & City exploration</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+            <section class="explination-page">
+
+                <div class="explination-head">
+                    <h4>You Journy Starts Here</h4>
+                    <h2>Finding Your Place Is Simple</h2>
+                    <h5>3 Steps</h5>
+
+                </div>
+
+                <div class="explination-steps">
+
+                    <div class="step-1">
+
+                        <div class="explination-icon">
+                            <img src="/assets/Icons/settings.svg" alt="settings">
+                        </div>
+
+                        <div class="explination-description">
+                            <h4>Personolize</h4>
+                            <p>Choose your season, continent and budget.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="step-2">
+
+                        <div class="explination-icon">
+                            <img src="/assets/Icons/map-pin.svg" alt="map-pin">
+                        </div>
+
+                        <div class="explination-description">
+                            <h4>Discover</h4>
+                            <p>Explore destinations that match your preferences.</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="step-3">
+
+                        <div class="explination-icon">
+                            <img src="/assets/Icons/airplane-takeoff.svg" alt="airplane">
+                        </div>
+
+                        <div class="explination-description">
+                            <h4>Fly</h4>
+                            <p>Start Your Flight</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="end-section">
+
+                <div class="end-description">
+
+                    <h5>Go Somewhere Different</h5>
+                    <h2>The World Is Bigger Than You Think.</h2>
+                    <p>Your next Story Is Waiting</p>
+
+                </div>
+
+                <div class="end-place-button">
+
+                    <button class="end-button">
+                        Find your place
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <a href="/pages/credits.html">Photo credits</a>
+        </footer>
+
     </body>
 </html>

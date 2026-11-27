@@ -1,0 +1,32 @@
+:root {
+    --color-background: #F6F8F7;
+    --color-heading: #123F46;
+    --color-muted: #63787B;
+    --color-muted-teal: #B9CFD1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: #203C40;
+    font: 1rem/1.6 Arial, Helvetica, sans-serif;
+}
+
+main {
+    max-width: 42rem;
+    margin: 3rem auto;
+    padding: 0 1.25rem;
+}
+
+h1, h2, a { color: var(--color-heading); }
+h1 { margin: 1.5rem 0 0.5rem; font-size: 2rem; }
+h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+p { margin: 0.5rem 0; }
+a { text-underline-offset: 0.2rem; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 0.15rem; }
+a:focus-visible { outline: 2px solid var(--color-heading); outline-offset: 3px; }
+.intro, .modifications, .back-link { color: var(--color-muted); font-size: 0.9rem; }
+.credits { list-style: none; padding: 0; margin: 1.5rem 0; }
+.credits li { padding: 1.25rem 0; border-top: 1px solid var(--color-muted-teal); }
